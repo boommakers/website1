@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Move: Portugal is Waiting for You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 1000,1000 1000,0"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #f0f8ff;
+        }
+
+        .hero .subheadline {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #e6f3ff;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        /* Lists */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .feature-list li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+
+        /* Portugal Benefits */
+        .portugal-benefits {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .portugal-benefits h2 {
+            color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: #2c3e50;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            color: white;
+        }
+
+        .price-box {
+            background: white;
+            color: #333;
+            padding: 50px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .price {
+            font-size: 3rem;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #95a5a6;
+            font-size: 1.5rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #f8f9fa;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 200px;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-toggle.active {
+            transform: rotate(45deg);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle,
+            .hero .subheadline {
+                font-size: 1rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Dream Retirement in Portugal Starts Here</h1>
+                <p class="subtitle">Start with clarity, confidence, and the guidance you truly need.</p>
+                <p class="subheadline">Finally, a step-by-step video course made for North Americans who want to retire peacefully in Portugal — with expert guidance, practical tools, and peace of mind built-in.</p>
+                <a href="#pricing" class="cta-button">Start Your Journey Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Path, Our Guidance -->
+    <section class="section">
+        <div class="container">
+            <h2>Moving abroad shouldn't feel overwhelming. It should feel liberating.</h2>
+            <div class="fade-in">
+                <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                    Too many future expats get stuck in the weeds: legal confusion, unclear tax rules, too much information — and no real plan. It doesn't have to be that way.
+                </p>
+                <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 20px auto;">
+                    Moving to Portugal can be an exciting, empowering new chapter. You just need the right map, and someone who's walked the path before you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- A Mentor's Map -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>✅ Clear. Simple. Life-Changing.</h2>
+            <div class="fade-in">
+                <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px;">
+                    A self-paced, beginner-friendly course designed for pre-retirees and early retirees from the U.S. and Canada.
+                </p>
+                <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto 50px;">
+                    In just 14 easy-to-follow lessons, you'll go from "curious but confused" to "confident and ready."
+                </p>
+            </div>
+            
+            <div class="features">
+                <div class="feature fade-in">
+                    <h4>What You'll Discover:</h4>
+                    <ul class="feature-list">
+                        <li>Whether Portugal really is the right fit for your lifestyle</li>
+                        <li>Where in the country you'll feel most at home</li>
+                        <li>How to navigate legal and visa processes with ease</li>
+                        <li>How to find and finance your ideal property</li>
+                        <li>What to expect from daily life, healthcare, food, people and lifestyle</li>
+                    </ul>
+                </div>
+                
+                <div class="feature fade-in">
+                    <h4>🛠️ You'll Also Get Access To:</h4>
+                    <ul class="feature-list">
+                        <li>📄 Visa Pathways Overview (PDF)</li>
+                        <li>📊 Cost-of-Living Comparison Sheets</li>
+                        <li>📍 Regional Compatibility Quiz & Interactive Maps</li>
+                        <li>📋 Housing Decision Matrix: Rent or Buy?</li>
+                        <li>🤝 Group Finder Guide</li>
+                        <li>🍷 Taste of Portugal Map & Restaurant Etiquette</li>
+                        <li>📖 Bonus eBook: Whispers of Portugal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Portugal -->
+    <section class="portugal-benefits">
+        <div class="container">
+            <h2>💡 "Why Portugal?" More like, "Why Not?"</h2>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 50px;">
+                Portugal has become a top destination for North American retirees—and it's easy to see why:
+            </p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">💰</div>
+                    <h4>Affordable Living</h4>
+                    <p>40–60% lower cost than many North American cities</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">🏥</div>
+                    <h4>Quality Healthcare</h4>
+                    <p>High-quality healthcare system</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">☀️</div>
+                    <h4>Beautiful Climate</h4>
+                    <p>Stunning landscapes and perfect weather</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">🛡️</div>
+                    <h4>Safe Communities</h4>
+                    <p>Peaceful, secure neighborhoods</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">🍷</div>
+                    <h4>Quality of Life</h4>
+                    <p>A lifestyle that values people over productivity</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">🏖️</div>
+                    <h4>Variety</h4>
+                    <p>From vineyards to beaches to urban charm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section class="section">
+        <div class="container">
+            <h2>👀 Is This You? Then You're in the Right Place.</h2>
+            <div class="fade-in" style="max-width: 800px; margin: 0 auto;">
+                <ul class="feature-list" style="font-size: 1.2rem;">
+                    <li>You're 50+ and planning your retirement within the next 5–10 years</li>
+                    <li>You've been dreaming of living abroad — but don't know where to start</li>
+                    <li>You want clarity, not complexity</li>
+                    <li>You value practical tools over empty promises</li>
+                    <li>You're ready to take the first real step toward a better life</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Enroll today and get Early Bird pricing</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 50px;">💬 Plus: 14-Day Risk-Free Guarantee</p>
+            
+            <div class="price-box fade-in">
+                <h3>📦 Here's What You Get When You Enroll</h3>
+                <ul class="feature-list" style="text-align: left; margin: 30px 0;">
+                    <li>✅ 14 Video Lessons with voiceover & visuals</li>
+                    <li>✅ 30+ Downloadable PDF Workbooks, Checklists, Maps and Planning Tools</li>
+                    <li>✅ "Golden Move Essentials" Master File</li>
+                    <li>✅ Glossary of Portuguese Legal & Financial Terms</li>
+                    <li>✅ No-stress, self-paced format</li>
+                    <li>✅ Members-only discussion space</li>
+                </ul>
+                
+                <div style="margin: 30px 0;">
+                    <p><strong>🎁 Bonus:</strong> "Whispers of Portugal — Cultural Stories to Fall in Love With" — included free for a limited time</p>
+                </div>
+                
+                <div style="margin: 40px 0;">
+                    <span class="original-price">Regular: $397</span>
+                    <div class="price">$297</div>
+                    <p><strong>📆 Limited time only — offer ends soon.</strong></p>
+                </div>
+                
+                <a href="#" class="cta-button" onclick="alert('Redirecting to payment...')">Join Now with Early Bird Access</a>
+                <p style="margin-top: 20px; color: #666;">14-Day Satisfaction Guarantee · No questions asked</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-alt">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is this course just for retirees?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>It's ideal for those in pre-retirement or early retirement, but the roadmap applies to anyone considering long-term living in Portugal.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do I need to speak Portuguese?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Nope! But we'll guide you on what helps and what doesn't when starting out.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What if I'm not sure Portugal is right for me?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The course includes tools to help you decide — before you commit to anything.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What if I'm not ready to move yet — is this still for me?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! This course is designed to give you clarity, whether you're moving in 3 months or 3 years. The earlier you prepare, the smoother your journey will be.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I take the course with my spouse or family?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes — one enrollment gives access to the entire household. You'll be making this decision together, so we built it that way.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What if I change my mind?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No problem. You have 14 days to explore the course, and if it's not right for you, we'll refund you — no hassle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Toggle functionality
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.faq-toggle').forEach(item => {
+                if (item !== toggle) {
+                    item.classList.remove('active');
+                    item.textContent = '+';
+                }
+            });
+            
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+            toggle.textContent = toggle.classList.contains('active') ? '×' : '+';
+        }
+
+        // Smooth scrolling for CTA buttons
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactivity to CTA buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
